@@ -61,7 +61,7 @@ public class Main {
                         && map[nr][nc] != 'x') {
                         if (map[nr][nc] == '*') {
                             mask = mask | (1 << dustMap.get(nr * C + nc));
-                            if(isVisited(mask, visited[nr][nc])) continue;
+                            
                             if (mask == (1 << (dustNum + 1)) - 1) {
                                 return ans;
                             }
