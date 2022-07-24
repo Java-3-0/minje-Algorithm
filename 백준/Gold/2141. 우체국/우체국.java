@@ -30,20 +30,12 @@ public class Main {
                 left = mid + 1;
             }
         }
-
-//        int closeIdx = findIdx(ans);
-//        int ansIdx;
-//        if (calc(arr[closeIdx - 1][0]) <= calc(arr[closeIdx][0])) {
-//            ansIdx = closeIdx - 1;
-//        } else {
-//            ansIdx = closeIdx;
-//        }
+ 
         if (calc(ans) >= calc(ans - 1)) {
             System.out.println(ans - 1);
         } else {
             System.out.println(ans);
         }
-        
     }
 
     public static long calc(long mid) {
@@ -52,21 +44,5 @@ public class Main {
             d += Math.abs(arr[i][0] - mid) * arr[i][1];
         }
         return d;
-    }
-
-    public static int findIdx(long ans) {
-        int left = 0;
-        int right = N - 1;
-        int idx = 0;
-        while (left <= right) {
-            int mid = (left + right) / 2;
-            if (ans <= arr[mid][0]) {
-                right = mid - 1;
-                idx = mid;
-            } else {
-                left = mid + 1;
-            }
-        }
-        return idx;
     }
 }
